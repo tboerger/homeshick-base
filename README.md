@@ -7,27 +7,14 @@ way i like it on Mac and Debian with the support of homesick.
 Installation
 ------------
 
-There are several pre-requisites needed before you install these package:
+There are several pre-requisites needed before you install these package,
+but you can execute the following command to get it done by the installer:
 
-Debian:
-    aptitude install git-core bash-completion curl ruby rubygems
-    sudo gem update --system
-    sudo gem install homesick pry git-up
+    curl https://raw.github.com/tboerger/homesick/master/install.sh | bash
 
-Mac OSX:
-    brew install git bash bash-completion curl
-    sudo gem update --system
-    sudo gem install homesick pry git-up
+Update
+------
 
-Initialization
---------------
+To update scripts from the repository use this command for loading my updater:
 
-Now you are ready to go! You can clone the code of this repository and
-get it running with the following command:
-
-    homesick clone tboerger/homesick && homesick symlink tboerger/homesick
-
-That's all, it's time to start a new shell! To update scripts from the
-repository use these commands:
-
-    homesick pull tboerger/homesick && homesick symlink tboerger/homesick
+    curl https://raw.github.com/tboerger/homesick/master/update.sh | bash
