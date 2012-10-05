@@ -1,0 +1,59 @@
+function __git_parse_dirty {
+  if [ -f /etc/vagrant_box_build_time ]; then
+    printf "o"
+    return
+  fi
+
+  local status=$(git status 2> /dev/null | tail -n1)
+
+  if [ $status == "" ]; then
+    printf "o"
+    return
+  fi
+
+  if [ $status == "nothing to commit (working directory clean)" ]; then
+    printf "\033[32mo\033[00m"
+    return
+  fi
+
+  printf "\033[31mx\033[00m"
+}
+
+function __git_parse_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ <\1>/"
+}
+
+function __ruby_parse_version {
+  local rvm=$(which rvm-prompt)
+  
+  if [ -x "$rvm" ]; then
+    echo $rvm
+    return
+  fi
+
+  local rbe=$(which rbenv-prompt)
+
+  if [ -x "$rbe" ]; then
+    echo $rbe
+    return
+  fi
+}
+
+bash_prompt() {
+  local NONE="\[\033[0m\]"
+
+  local U="\[\033[01;32m\]"
+  local R="\[\033[01;31m\]"
+  local S="\[\033[01;37m\]"
+  local H="\[\033[01;35m\]"
+  local D="\[\033[01;34m\]"
+
+  if [[ ${EUID} == 0 ]] ; then
+    export PS1="\n$R\u$S@$H\h: $D\w\$(__ruby_parse_version)\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
+  else
+    export PS1="\n$U\u$S@$H\h: $D\w\$(__ruby_parse_version)\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
+  fi
+}
+
+bash_prompt
+unset bash_prompt

@@ -1,0 +1,23 @@
+[user]
+  name = "Thomas Boerger"
+  email = "tboerger@tbpro.de"
+
+[github]
+  user = tboerger
+
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[alias]
+  ci = commit
+  di = diff
+  st = status
+  co = checkout
+  br = branch
+  cat = cat-file -p
+
+  m = checkout master
+  d = checkout develop

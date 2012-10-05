@@ -1,0 +1,44 @@
+_get_knife_completions() {
+  n=$1
+  shift
+  
+  [ "$1" == "knife" ] && shift
+  
+  local opts
+  opts="$(knife $@ --help | grep -E '^knife'|cut -f$n -d" ")"
+  
+  _upvar opts "$opts"
+}
+
+_knife() {
+  local opts cur prev cword words
+  opts="bootstrap client configure cookbook data ec2 exec index node rackspace recipe role search slicehost ssh status terremark windows"
+  _get_comp_words_by_ref cur prev cword words
+  COMPREPLY=()
+  
+  case $prev in
+    upload)
+      if [[ -n $CHEF_REPOS ]]; then
+        opts=$( ls -1p ${CHEF_REPOS[@]} | sort -u | sed -n 's/\/$//p' )
+        COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+      fi
+      ;;
+    *)
+      case $cword in
+        1)
+          COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+          return 0
+          ;;
+        *)
+          _get_knife_completions $(( $cword + 1 )) ${words[*]}
+          COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+          return 0
+          ;;
+      esac
+      ;;
+  esac
+
+  [[ ${#COMPREPLY[@]} -ge 1 ]] && return 0
+}
+
+complete -F _knife knife

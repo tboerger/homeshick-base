@@ -1,0 +1,17 @@
+export EDITOR='vim'
+
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+
+export PAGER='less'
+export CLICOLOR='1'
+export LSCOLORS='Gxfxcxdxbxegedabagacad'
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+export HISTCONTROL=ignoredups
+
+set -C noclobber
+shopt -s checkwinsize
+shopt -s histappend

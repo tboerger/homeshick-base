@@ -1,0 +1,23 @@
+if [ is_linux_platform -eq 1 ]; then
+  alias netstat='sudo netstat -tulpen'
+fi
+
+if [ is_darwin_platform -eq 1 ]; then
+  alias netstat='sudo lsof -i -P'
+fi
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias rgrep='grep -Rn'
+alias history='fc -l 1'
+
+alias ls='ls -G'
+alias lsa='ls -lah'
+alias l='ls -la'
+alias ll='ls -alFh'
+
+alias gti='git'
+alias gs='git status'
+alias gc='git commit'
+alias gp='git push'
