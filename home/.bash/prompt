@@ -27,14 +27,14 @@ function __ruby_parse_version {
   local rvm=$(which rvm-prompt)
   
   if [ -x "$rvm" ]; then
-    echo $rvm
+    echo `$rvm`
     return
   fi
 
   local rbe=$(which rbenv-prompt)
 
   if [ -x "$rbe" ]; then
-    echo $rbe
+    echo `$rbe`
     return
   fi
 }
