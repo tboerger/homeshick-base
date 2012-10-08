@@ -6,12 +6,12 @@ function __git_parse_dirty {
 
   local status=$(git status 2> /dev/null | tail -n1)
 
-  if [ $status == "" ]; then
+  if [ "${status}" == "" ]; then
     printf "o"
     return
   fi
 
-  if [ $status == "nothing to commit (working directory clean)" ]; then
+  if [ "${status}" == "nothing to commit (working directory clean)" ]; then
     printf "\033[32mo\033[00m"
     return
   fi
@@ -29,7 +29,7 @@ function __ruby_parse_version {
   if [ -x "$rbe" ]; then
     local str=`$rbe`
 
-    if [ "x$str" == "x" ]; then
+    if [ "${str}" == "" ]; then
       return
     else
       printf " <${str}>"
@@ -41,7 +41,7 @@ function __ruby_parse_version {
   if [ -x "$rvm" ]; then
     local str=`$rvm`
     
-    if [ "x$str" == "x" ]; then
+    if [ "${str}" == "" ]; then
       return
     else
       printf " <${str}>"
@@ -58,7 +58,7 @@ bash_prompt() {
   local H="\[\033[01;35m\]"
   local D="\[\033[01;34m\]"
 
-  if [[ ${EUID} == 0 ]] ; then
+  if [[ "${EUID}" == "0" ]] ; then
     export PS1="\n$R\u$S@$H\h: $D\w\$(__ruby_parse_version)\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
   else
     export PS1="\n$U\u$S@$H\h: $D\w\$(__ruby_parse_version)\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
