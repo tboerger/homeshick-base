@@ -1,8 +1,8 @@
-if [ is_linux_platform ]; then
+if [ $DEB ]; then
   alias netstat='sudo netstat -tulpen'
 fi
 
-if [ is_darwin_platform ]; then
+if [ $OSX ]; then
   alias netstat='sudo lsof -i -P'
 fi
 

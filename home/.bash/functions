@@ -1,33 +1,3 @@
-function is_linux_platform() {
-  local str=$(uname)
-  if [ "$str" == "Linux" ]; then
-    return 1
-  else
-    return 0
-  fi
-}
-
-function is_darwin_platform() {
-  local str=$(uname)
-  if [ "$str" == "Darwin" ]; then
-    return 1
-  else
-    return 0
-  fi
-}
-
-function export_paths() {
-  if [ is_linux_platform -eq 1 ]; then
-    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
-  fi
-
-  if [ is_darwin_platform -eq 1 ]; then
-    PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
-  fi
-
-  export PATH
-}
-
 function cache_complete() {
   local src_file="$1"
   local cache_file="$2"

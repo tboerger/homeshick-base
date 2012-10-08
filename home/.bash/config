@@ -1,3 +1,15 @@
+UNAME=`uname`
+
+if [ "$UNAME" == "Linux" ]; then
+  export DEB=1
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
+fi
+
+if [ "$UNAME" == "Darwin" ]; then
+  export OSX=1
+  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
+fi
+
 export EDITOR='vim'
 
 export LC_ALL='en_US.UTF-8'
