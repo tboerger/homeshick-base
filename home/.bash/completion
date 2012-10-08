@@ -1,10 +1,10 @@
-if [ is_linux_platform -eq 1 ]; then
+if [ is_linux_platform ]; then
   if [ -f `brew --prefix`/etc/bash_completion ]; then
     source `brew --prefix`/etc/bash_completion
   fi
 fi
 
-if [ is_darwin_platform -eq 1 ]; then
+if [ is_darwin_platform ]; then
   if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
   fi

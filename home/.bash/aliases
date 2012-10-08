@@ -1,8 +1,8 @@
-if [ is_linux_platform -eq 1 ]; then
+if [ is_linux_platform ]; then
   alias netstat='sudo netstat -tulpen'
 fi
 
-if [ is_darwin_platform -eq 1 ]; then
+if [ is_darwin_platform ]; then
   alias netstat='sudo lsof -i -P'
 fi
 

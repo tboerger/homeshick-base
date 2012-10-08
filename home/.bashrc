@@ -1,7 +1,7 @@
 source $HOME/.bash/config
 source $HOME/.bash/functions
 
-export_paths()
+export_paths
 
 source $HOME/.bash/completion
 source $HOME/.bash/aliases
