@@ -24,18 +24,28 @@ function __git_parse_branch {
 }
 
 function __ruby_parse_version {
-  local rvm=$(which rvm-prompt)
-  
-  if [ -x "$rvm" ]; then
-    echo `$rvm`
-    return
-  fi
-
   local rbe=$(which rbenv-prompt)
 
   if [ -x "$rbe" ]; then
-    echo `$rbe`
-    return
+    local str=`$rbe`
+
+    if [ "x$str" == "x" ]; then
+      return
+    else
+      printf " <${str}>"
+    fi
+  fi
+
+  local rvm=$(which rvm-prompt)
+  
+  if [ -x "$rvm" ]; then
+    local str=`$rvm`
+    
+    if [ "x$str" == "x" ]; then
+      return
+    else
+      printf " <${str}>"
+    fi
   fi
 }
 
