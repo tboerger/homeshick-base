@@ -27,4 +27,4 @@ gem install bundler rake homesick pry git-up --no-ri --no-rdoc
 rbenv rehash
 
 homesick clone tboerger/homesick
-homesick symlink tboerger/homesick
+homesick symlink tboerger/homesick -f

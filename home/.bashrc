@@ -6,13 +6,19 @@ source "${HOME}/.bash/prompt"
 
 LOCAL_RBENV="${HOME}/.rbenv"
 if [ -d $LOCAL_RBENV ]; then
-  eval "$($LOCAL_RBENV/bin/rbenv init -)"
+  export RBENV_ROOT=$LOCAL_RBENV
+  export PATH="$RBENV_ROOT/bin:$PATH"
+
+  eval "$(rbenv init -)"
   IS_RBENV=1
 fi
 
 GLOBE_RBENV="/usr/local/rbenv"
 if [ -d $GLOBE_RBENV ]; then
-  eval "$($GLOBE_RBENV/bin/rbenv init -)"
+  export RBENV_ROOT=$GLOBE_RBENV
+  export PATH="$RBENV_ROOT/bin:$PATH"
+
+  eval "$(rbenv init -)"
   IS_RBENV=1
 fi
 
