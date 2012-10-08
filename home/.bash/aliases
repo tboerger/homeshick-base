@@ -1,19 +1,19 @@
 if [ $DEB ]; then
   alias netstat='sudo netstat -tulpen'
 
-	alias ls='ls --color=auto'
-	alias lsa='ls -lah'
-	alias l='ls -la'
-	alias ll='ls -alFh'
+  alias ls='ls --color=auto'
+  alias lsa='ls -lah'
+  alias l='ls -la'
+  alias ll='ls -alFh'
 fi
 
 if [ $OSX ]; then
   alias netstat='sudo lsof -i -P'
 
-	alias ls='ls -G'
-	alias lsa='ls -lah'
-	alias l='ls -la'
-	alias ll='ls -alFh'
+  alias ls='ls -G'
+  alias lsa='ls -lah'
+  alias l='ls -la'
+  alias ll='ls -alFh'
 fi
 
 alias ..='cd ..'

@@ -3,11 +3,11 @@
 UNAME=$(uname)
 
 if [ "$UNAME" == "Linux" ]; then
-	aptitude install -y git-core bash-completion curl
+  aptitude install -y git-core bash-completion curl
 fi
 
 if [ "$UNAME" == "Darwin" ]; then
-	brew install git bash bash-completion curl
+  brew install git bash bash-completion curl
 fi
 
 export RBENV_ROOT=$HOME/.rbenv
