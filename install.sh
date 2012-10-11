@@ -4,7 +4,7 @@ UNAME=$(uname)
 
 if [ "$UNAME" == "Linux" ]; then
   PKGS="git-core bash-completion"
-  WGET="https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh"
+  WGET="https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh"
 
   if [ "${EUID}" == "0" ]; then
     aptitude install -y $PKGS
@@ -16,8 +16,17 @@ if [ "$UNAME" == "Linux" ]; then
 fi
 
 if [ "$UNAME" == "Darwin" ]; then
-  brew install git bash bash-completion
-  curl https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+  if [ "${EUID}" == "0" ]; then
+    BREW=`which brew`
+
+    if [ ! -x $BREW ]; then
+      echo "Please install homebrew as standard user!"
+      exit 1
+    fi
+  else
+    brew install git bash bash-completion
+    curl https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh | bash
+  fi
 fi
 
 export RBENV_ROOT=$HOME/.rbenv
