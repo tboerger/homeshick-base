@@ -3,7 +3,7 @@
 UNAME=$(uname)
 
 if [ "$UNAME" == "Linux" ]; then
-  aptitude install -y git-core bash-completion
+  sudo aptitude install -y git-core bash-completion
 fi
 
 if [ "$UNAME" == "Darwin" ]; then
