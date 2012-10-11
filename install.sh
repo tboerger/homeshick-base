@@ -3,11 +3,21 @@
 UNAME=$(uname)
 
 if [ "$UNAME" == "Linux" ]; then
-  sudo aptitude install -y git-core bash-completion
+  PKGS="git-core bash-completion"
+  WGET="https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh"
+
+  if [ "${EUID}" == "0" ]; then
+    aptitude install -y $PKGS
+    wget -O - $WGET | bash
+  else
+    sudo aptitude install -y $PKGS
+    wget -O - $WGET | sudo bash
+  fi
 fi
 
 if [ "$UNAME" == "Darwin" ]; then
   brew install git bash bash-completion
+  curl https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
 fi
 
 export RBENV_ROOT=$HOME/.rbenv
