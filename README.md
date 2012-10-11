@@ -10,6 +10,7 @@ Installation
 There are several pre-requisites needed before you install these package,
 but you can execute the following command to get it done by the installer:
 
+    wget -O - https://raw.github.com/tboerger/homesick/master/install.sh | bash
     curl https://raw.github.com/tboerger/homesick/master/install.sh | bash
 
 Update
@@ -17,4 +18,5 @@ Update
 
 To update scripts from the repository use this command for loading my updater:
 
+    wget -O - https://raw.github.com/tboerger/homesick/master/update.sh | bash
     curl https://raw.github.com/tboerger/homesick/master/update.sh | bash
