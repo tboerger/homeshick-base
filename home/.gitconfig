@@ -21,3 +21,9 @@
 
   m = checkout master
   d = checkout develop
+
+  sma = submodule add
+  smi = submodule init
+  smu = submodule update --init --recursive
+  
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
