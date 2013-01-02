@@ -1,9 +1,13 @@
 begin
-  require 'rubygems'
-  require 'pry'
+  if File.basename($0) == "shef"
+    raise LoadError.new
+  else
+    require 'rubygems'
+    require 'pry'
 
-  Pry.start
-  exit
+    Pry.start
+    exit
+  end
 rescue LoadError => e
   require 'pp'
   
