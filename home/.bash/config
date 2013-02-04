@@ -10,20 +10,31 @@ if [ "$UNAME" == "Darwin" ]; then
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 fi
 
-export EDITOR='vim'
+export EDITOR="vim"
 
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 
-export PAGER='less'
-export CLICOLOR='1'
-export LSCOLORS='Gxfxcxdxbxegedabagacad'
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-export HISTCONTROL=ignoredups
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;42;30m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+export PAGER="less"
+export CLICOLOR="1"
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+export GREP_OPTIONS="--color=auto"
+export GREP_COLOR="1;32"
+export IGNOREEOF="1"
+export HISTSIZE=100000
+export HISTFILESIZE=100000
+export HISTCONTROL=ignoreboth
 
 set -C noclobber
+shopt -s cmdhist
 shopt -s checkwinsize
 shopt -s histappend
+shopt -s cdspell
