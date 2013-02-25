@@ -38,7 +38,7 @@ setlocal spelllang=en
 
 if has("terminfo")
   syntax on
-  colorscheme delek
+  colorscheme tronlegacy
 end
 
 map <F5> zo
