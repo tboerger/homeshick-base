@@ -4,14 +4,14 @@ function __git_parse_dirty {
     return
   fi
 
-  local status=$(git status 2> /dev/null | tail -n1)
+  local status=$(git status --short 2> /dev/null)
 
-  if [ "${status}" == "" ]; then
+  if [ $? -ne 0 ]; then
     printf "o"
     return
   fi
 
-  if [ "${status}" == "nothing to commit (working directory clean)" ]; then
+  if [ "${status}" == "" ]; then
     printf "\033[32mo\033[00m"
     return
   fi
