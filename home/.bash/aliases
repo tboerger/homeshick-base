@@ -16,6 +16,9 @@ if [ $OSX ]; then
   alias ll='ls -alFh'
 fi
 
+command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
+command -v htop >/dev/null 2>&1 && alias top="htop"
+
 alias ..='cd ..'
 alias ...='cd ../..'
 
