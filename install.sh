@@ -36,14 +36,14 @@ curl https://raw.github.com/fesplugas/rbenv-installer/master/bin/rbenv-installer
 git clone https://github.com/joefiorini/rbenv-prompt.git $RBENV_ROOT/plugins/rbenv-prompt
 git clone https://github.com/jamis/rbenv-gemset.git $RBENV_ROOT/plugins/rbenv-gemset
 
-rbenv install 1.9.3-p194
-rbenv global 1.9.3-p194
+rbenv install 2.0.0-p0
+rbenv global 2.0.0-p0
 rbenv rehash
 
 gem update --system
 rbenv rehash
 
-gem install bundler rake homesick pry git-up --no-ri --no-rdoc
+gem install bundler rake homesick pry --no-ri --no-rdoc
 rbenv rehash
 
 homesick clone tboerger/homesick
