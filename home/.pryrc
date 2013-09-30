@@ -1,4 +1,4 @@
-Pry.config.editor = 'vim'
+Pry.config.editor = "vim"
 
 def t
   x = Time.now
@@ -7,7 +7,7 @@ def t
 end
 
 if defined?(Rails) && Rails.env
-  require 'logger'
+  require "logger"
 
   if defined?(ActiveRecord)
     ActiveRecord::Base.logger = Logger.new(STDOUT)

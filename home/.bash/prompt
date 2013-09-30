@@ -43,18 +43,6 @@ function __ruby_parse_version {
       printf " <${str}>"
     fi
   fi
-
-  local rvm=$(which rvm)
-  
-  if [ -x "$rvm" ]; then
-    local str=`rvm-prompt`
-    
-    if [ "${str}" == "" ]; then
-      return
-    else
-      printf " <${str}>"
-    fi
-  fi
 }
 
 bash_prompt() {

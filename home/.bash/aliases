@@ -1,33 +1,33 @@
 if [ $DEB ]; then
-  alias netstat='sudo netstat -tulpen'
+  alias netstat="sudo netstat -tulpen"
 
-  alias ls='ls --color=auto'
-  alias lsa='ls -lah'
-  alias l='ls -la'
-  alias ll='ls -alFh'
+  alias ls="ls --color=auto"
+  alias lsa="ls -lah"
+  alias l="ls -la"
+  alias ll="ls -alFh"
 fi
 
 if [ $OSX ]; then
-  alias netstat='sudo lsof -i -P'
+  alias netstat="sudo lsof -i -P"
 
-  alias ls='ls -G'
-  alias lsa='ls -lah'
-  alias l='ls -la'
-  alias ll='ls -alFh'
+  alias ls="ls -G"
+  alias lsa="ls -lah"
+  alias l="ls -la"
+  alias ll="ls -alFh"
 fi
 
 command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
 command -v htop >/dev/null 2>&1 && alias top="htop"
 
-alias ..='cd ..'
-alias ...='cd ../..'
+alias ..="cd .."
+alias ...="cd ../.."
 
-alias rgrep='grep -Rn'
-alias history='fc -l 1'
+alias rgrep="grep -Rn"
+alias history="fc -l 1"
 
-alias gti='git'
-alias gs='git status'
-alias gc='git commit'
-alias gp='git push'
+alias gti="git"
+alias gs="git status"
+alias gc="git commit"
+alias gp="git push"
 
-alias be='bundle exec'
+alias be="bundle exec"

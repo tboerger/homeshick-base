@@ -4,34 +4,20 @@ source "${HOME}/.bash/completion"
 source "${HOME}/.bash/aliases"
 source "${HOME}/.bash/prompt"
 
-LOCAL_RBENV="${HOME}/.rbenv"
-if [ -d $LOCAL_RBENV ]; then
-  export RBENV_ROOT=$LOCAL_RBENV
-  export PATH="$RBENV_ROOT/bin:$PATH"
-
-  eval "$(rbenv init -)"
-  IS_RBENV=1
-fi
-
 GLOBE_RBENV="/usr/local/rbenv"
 if [ -d $GLOBE_RBENV ]; then
   export RBENV_ROOT=$GLOBE_RBENV
   export PATH="$RBENV_ROOT/bin:$PATH"
 
   eval "$(rbenv init -)"
-  IS_RBENV=1
 fi
 
-if [ ! $IS_RBENV ]; then
-  LOCAL_RVM="${HOME}/.rvm"
-  if [ -d $LOCAL_RVM ]; then
-    source "${LOCAL_RVM}/scripts/rvm"
-  fi
+LOCAL_RBENV="${HOME}/.rbenv"
+if [ -d $LOCAL_RBENV ]; then
+  export RBENV_ROOT=$LOCAL_RBENV
+  export PATH="$RBENV_ROOT/bin:$PATH"
 
-  GLOBE_RVM="/usr/local/rvm"
-  if [ -d $GLOBE_RVM ]; then
-    source "${GLOBE_RVM}/scripts/rvm"
-  fi
+  eval "$(rbenv init -)"
 fi
 
 if [ -f $HOME/.localrc ]; then
