@@ -26,7 +26,7 @@ function __git_parse_branch {
 function __ruby_parse_version {
   local rbe=$(command -v rbenv)
   
-  if [ $rbe ]; then
+  if [ -x "$rbe" ]; then
     local str=`rbenv version-name`
     
     if [ -f "$(pwd)/.rbenv-gemsets" ]; then
