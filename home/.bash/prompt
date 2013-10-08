@@ -12,11 +12,11 @@ function __git_parse_dirty {
   fi
 
   if [ "${status}" == "" ]; then
-    printf "\033[32mo\033[00m"
+    printf "o"
     return
   fi
 
-  printf "\033[31mx\033[00m"
+  printf "x"
 }
 
 function __git_parse_branch {
