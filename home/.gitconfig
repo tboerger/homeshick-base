@@ -11,6 +11,9 @@
   interactive = auto
   status = auto
 
+[push]
+  default = simple
+
 [alias]
   ci = commit
   di = diff
