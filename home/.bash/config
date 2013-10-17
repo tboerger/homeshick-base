@@ -10,7 +10,7 @@ if [ "$UNAME" == "Darwin" ]; then
   export PATH="~/.bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/X11R6/bin"
 fi
 
-if [ -d ~/bin ]: then
+if [ -d ~/bin ]; then
   export PATH="~/bin:${PATH}
 fi
 
