@@ -25,9 +25,9 @@ alias ...="cd ../.."
 alias rgrep="grep -Rn"
 alias history="fc -l 1"
 
+alias git="hub"
 alias gti="git"
 alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
-
 alias be="bundle exec"
