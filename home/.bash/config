@@ -11,7 +11,7 @@ if [ "$UNAME" == "Darwin" ]; then
 fi
 
 if [ -d ~/bin ]; then
-  export PATH="~/bin:${PATH}
+  export PATH="~/bin:${PATH}"
 fi
 
 export EDITOR="vim"
