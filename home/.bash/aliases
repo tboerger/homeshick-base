@@ -1,23 +1,16 @@
-if [ $DEB ]; then
+if [ $LNX ]; then
   alias netstat="sudo netstat -tulpen"
-
   alias ls="ls --color=auto"
-  alias lsa="ls -lah"
-  alias l="ls -la"
-  alias ll="ls -alFh"
 fi
 
 if [ $OSX ]; then
   alias netstat="sudo lsof -i -P"
-
   alias ls="ls -G"
-  alias lsa="ls -lah"
-  alias l="ls -la"
-  alias ll="ls -alFh"
 fi
 
-command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
-command -v htop >/dev/null 2>&1 && alias top="htop"
+alias lsa="ls -lah"
+alias l="ls -la"
+alias ll="ls -alFh"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -31,3 +24,9 @@ alias gs="git status"
 alias gc="git commit"
 alias gp="git push"
 alias be="bundle exec"
+
+alias iosc="osc -A https://api.suse.de"
+
+command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
+command -v htop >/dev/null 2>&1 && alias top="htop"
+command -v zypper >/dev/null 2>&1 && alias zypper="sudo zypper"
