@@ -25,8 +25,10 @@ alias gc="git commit"
 alias gp="git push"
 alias be="bundle exec"
 
-alias iosc="osc -A https://api.suse.de"
-
 command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
 command -v htop >/dev/null 2>&1 && alias top="htop"
 command -v zypper >/dev/null 2>&1 && alias zypper="sudo zypper"
+command -v osc >/dev/null 2>&1 && alias isc="osc -A i"
+
+command -v irssi >/dev/null 2>&1 && alias irssi="screen -c ~/.irssi/screenrc -S irssi irssi"
+command -v centerim >/dev/null 2>&1 && alias centerim="screen -c ~/.irssi/screenrc -S irssi centerim5"
