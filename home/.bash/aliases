@@ -1,14 +1,4 @@
-if [ $LNX ]; then
-  alias netstat="sudo netstat -tulpen"
-  alias ls="ls --color=auto"
-fi
-
-if [ $OSX ]; then
-  alias netstat="sudo lsof -i -P"
-  alias ls="ls -G"
-fi
-
-alias lsa="ls -lah"
+alias lsa="ls -lahi"
 alias l="ls -la"
 alias ll="ls -alFh"
 
@@ -21,14 +11,20 @@ alias history="fc -l 1"
 alias git="hub"
 alias gti="git"
 alias gs="git status"
+alias status="git status"
 alias gc="git commit"
+alias commit="git commit"
 alias gp="git push"
+alias push="git push"
+alias pull="git pull"
 alias be="bundle exec"
 
-command -v colordiff >/dev/null 2>&1 && alias diff="colordiff -u"
-command -v htop >/dev/null 2>&1 && alias top="htop"
-command -v zypper >/dev/null 2>&1 && alias zypper="sudo zypper"
-command -v osc >/dev/null 2>&1 && alias isc="osc -A i"
+if [ -x $(command -v htop) ]
+then
+  alias top="htop"
+fi
 
-command -v irssi >/dev/null 2>&1 && alias irssi="screen -c ~/.irssi/screenrc -S irssi irssi"
-command -v centerim5 >/dev/null 2>&1 && alias centerim5="screen -c ~/.irssi/screenrc -S centerim5 centerim5"
+if [ -x $(command -v colordiff) ]
+then
+  alias diff="colordiff -u"
+fi

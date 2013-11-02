@@ -24,18 +24,8 @@ function __git_parse_branch {
 }
 
 function __ruby_parse_version {
-  local rbe=$(command -v rbenv)
-  
-  if [ -x "$rbe" ]; then
+  if [ -x $(command -v rbenv) ]; then
     local str=`rbenv version-name`
-    
-    if [ -f "$(pwd)/.rbenv-gemsets" ]; then
-      local gem=`rbenv gemset active | cut -d' ' -f1`
-      
-      if [ "$gem" != "" ]; then
-        str="${str}@${gem}"
-      fi
-    fi
 
     if [ "${str}" == "" ]; then
       return
@@ -43,6 +33,16 @@ function __ruby_parse_version {
       printf " <${str}>"
     fi
   fi
+
+  if [ -x $(command -v ruby) ]; then
+    local str=`ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"'`
+
+    if [ "${str}" == "" ]; then
+      return
+    else
+      printf " <${str}>"
+    fi
+  fi  
 }
 
 bash_prompt() {

@@ -1,25 +1,20 @@
-source "${HOME}/.bash/config"
-source "${HOME}/.bash/functions"
-source "${HOME}/.bash/completion"
-source "${HOME}/.bash/aliases"
-source "${HOME}/.bash/prompt"
+source "~/.bash/config"
+source "~/.bash/prompt"
+source "~/.bash/aliases"
 
-GLOBE_RBENV="/usr/local/rbenv"
-if [ -d $GLOBE_RBENV ]; then
-  export RBENV_ROOT=$GLOBE_RBENV
-  export PATH="$RBENV_ROOT/bin:$PATH"
-
-  eval "$(rbenv init -)"
+if [ -f ~/.bash/system ]
+then
+  source "~/.bash/system"
 fi
 
-LOCAL_RBENV="${HOME}/.rbenv"
-if [ -d $LOCAL_RBENV ]; then
-  export RBENV_ROOT=$LOCAL_RBENV
-  export PATH="$RBENV_ROOT/bin:$PATH"
+for i in ~/.bash/config.d/*; do
+  source $i
+done
 
-  eval "$(rbenv init -)"
-fi
+for i in ~/.bash/completion.d/*; do
+  source $i
+done
 
-if [ -f $HOME/.localrc ]; then
-  source $HOME/.localrc
+if [ -f ~/.localrc ]; then
+  source ~/.localrc
 fi

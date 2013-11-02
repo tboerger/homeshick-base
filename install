@@ -1,0 +1,58 @@
+#!/bin/bash
+
+GITFLOW_URL="https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh"
+
+if [ -f /etc/ ]
+then
+  if [ ! -x `which sudo` ]
+  then
+    echo "Please install sudo!"
+    exit 1
+  fi
+
+  if [ ! -x `which homesick` ]
+  then
+    echo "Please install homesick!"
+    exit 2
+  fi
+
+  echo "TODO: Install git and bash completion!"
+  exit 3
+
+  curl ${GITFLOW_URL} | sudo bash
+fi
+
+if [ -f /etc/ ]
+then
+  if [ ! -x `which sudo` ]
+  then
+    echo "Please install sudo!"
+    exit 1
+  fi
+
+  echo "TODO: Install git and bash completion!"
+  exit 3
+
+  curl ${GITFLOW_URL} | sudo bash
+fi
+
+if [ -f /etc/ ]
+then
+  if [ ! -x `which brew` ]
+  then
+    echo "Please install homebrew!"
+    exit 1
+  fi
+
+  if [ "${EUID}" == "0" ]
+  then
+    echo "Run as standard user!"
+    exit 2
+  fi
+
+  brew install git bash bash-completion
+  curl ${GITFLOW_URL} | sudo bash
+fi
+
+homesick clone tboerger/homesick-base
+homesick symlink tboerger/homesick-base

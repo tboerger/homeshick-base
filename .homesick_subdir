@@ -1,2 +1,4 @@
 .bin
-.centerim5
+.bash
+.bash/config.d
+.bash/completion.d
