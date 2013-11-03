@@ -4,11 +4,13 @@ function cache_complete() {
   local generate_cmd="$3"
   local word=${COMP_WORDS[COMP_CWORD]}
 
-  if [ ! -e "$src_file" ]; then
+  if [ ! -e "$src_file" ]
+  then
     return
   fi
 
-  if [ ! -f "$cache_file" -o "$src_file" -nt "$cache_file" ]; then
+  if [ ! -f "$cache_file" -o "$src_file" -nt "$cache_file" ]
+  then
     eval $generate_cmd > $cache_file
   fi
 

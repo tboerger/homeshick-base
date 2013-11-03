@@ -6,12 +6,14 @@ function __git_parse_dirty {
 
   local status=$(git status --short 2> /dev/null)
 
-  if [ $? -ne 0 ]; then
+  if [ $? -ne 0 ]
+  then
     printf "o"
     return
   fi
 
-  if [ "${status}" == "" ]; then
+  if [ "${status}" == "" ]
+  then
     printf "o"
     return
   fi
@@ -24,24 +26,12 @@ function __git_parse_branch {
 }
 
 function __ruby_parse_version {
-  if [ -x $(command -v rbenv) ]; then
-    local str=`rbenv version-name`
-
-    if [ "${str}" == "" ]; then
-      return
-    else
-      printf " <${str}>"
-    fi
-  fi
-
-  if [ -x $(command -v ruby) ]; then
-    local str=`ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"'`
-
-    if [ "${str}" == "" ]; then
-      return
-    else
-      printf " <${str}>"
-    fi
+  if hash ruby 2> /dev/null
+  then
+    local str=$(ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"')
+    printf " <${str}>"
+  else
+    printf ""
   fi  
 }
 

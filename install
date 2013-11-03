@@ -54,5 +54,13 @@ then
   curl ${GITFLOW_URL} | sudo bash
 fi
 
-homesick clone tboerger/homesick-base
-homesick symlink tboerger/homesick-base
+if [ ! -d ~/.homesick/repos/homeshick ]
+then
+  mkdir -p ~/.homesick/repos
+  git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
+
+  source ~/.homesick/repos/homeshick/homeshick.sh
+fi
+
+homeshick clone -bf tboerger/homeshick-base
+homeshick link -bf tboerger/homesick-base

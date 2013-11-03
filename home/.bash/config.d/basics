@@ -19,12 +19,12 @@ alias push="git push"
 alias pull="git pull"
 alias be="bundle exec"
 
-if [ -x $(command -v htop) ]
+if hash htop 2> /dev/null
 then
   alias top="htop"
 fi
 
-if [ -x $(command -v colordiff) ]
+if hash colordiff 2> /dev/null
 then
   alias diff="colordiff -u"
 fi
