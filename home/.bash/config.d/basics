@@ -8,16 +8,25 @@ alias ...="cd ../.."
 alias rgrep="grep -Rn"
 alias history="fc -l 1"
 
-alias git="hub"
-alias gti="git"
 alias gs="git status"
-alias status="git status"
 alias gc="git commit"
-alias commit="git commit"
 alias gp="git push"
+alias gl="git pull"
+
+alias status="git status"
+alias commit="git commit"
 alias push="git push"
 alias pull="git pull"
+
+alias pebbles="git checkout release/pebbles/master"
+alias roxy="git checkout release/roxy/master"
+
 alias be="bundle exec"
+
+if hash hub 2> /dev/null
+then
+  alias git="hub"
+fi
 
 if hash htop 2> /dev/null
 then
@@ -28,3 +37,40 @@ if hash colordiff 2> /dev/null
 then
   alias diff="colordiff -u"
 fi
+
+if hash irssi 2> /dev/null
+then
+  alias irssi="screen -c ~/.irssi/screenrc -S irssi irssi"
+fi
+
+if hash centerim5 2> /dev/null
+then
+  alias centerim5="screen -c ~/.centerim5/screenrc -S centerim5 centerim5"
+fi
+
+function rails() {
+  if [ -f Gemfile ]
+  then
+    bundle exec rails $@
+  else
+    rails $@
+  fi
+}
+
+function cap() {
+  if [ -f Gemfile ]
+  then
+    bundle exec cap $@
+  else
+    cap $@
+  fi
+}
+
+function rake() {
+  if [ -f Gemfile ]
+  then
+    bundle exec rake $@
+  else
+    rake $@
+  fi
+}

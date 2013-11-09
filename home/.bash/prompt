@@ -4,7 +4,7 @@ function __git_parse_dirty {
     return
   fi
 
-  local status=$(git status --short 2> /dev/null)
+  status=$(git status --short 2> /dev/null)
 
   if [ $? -ne 0 ]
   then
@@ -14,11 +14,11 @@ function __git_parse_dirty {
 
   if [ "${status}" == "" ]
   then
-    printf "o"
+    printf "✔"
     return
   fi
 
-  printf "x"
+  printf "✖"
 }
 
 function __git_parse_branch {
@@ -28,8 +28,7 @@ function __git_parse_branch {
 function __ruby_parse_version {
   if hash ruby 2> /dev/null
   then
-    local str=$(ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"')
-    printf " <${str}>"
+    printf " <$(ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"')>"
   else
     printf ""
   fi  

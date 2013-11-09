@@ -1,4 +1,4 @@
-function cache_complete() {
+function __cache_complete() {
   local src_file="$1"
   local cache_file="$2"
   local generate_cmd="$3"
@@ -14,7 +14,8 @@ function cache_complete() {
     eval $generate_cmd > $cache_file
   fi
 
-  COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
   local tasks=$(cat $cache_file)
+
+  COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
   COMPREPLY=( $(compgen -W "${tasks}" -- "$word") )
 }

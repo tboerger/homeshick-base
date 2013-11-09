@@ -34,6 +34,7 @@ set sidescrolloff=5
 set scrolljump=1
 set completeopt=longest,menu,preview
 set diffopt+=vertical
+
 setlocal spelllang=en
 
 if has("terminfo")
