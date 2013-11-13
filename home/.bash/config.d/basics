@@ -40,12 +40,12 @@ fi
 
 if hash irssi 2> /dev/null
 then
-  alias irssi="screen -c ~/.irssi/screenrc -S irssi irssi"
+  alias irssi="screen -d -xRR -c ~/.irssi/screenrc -S irssi irssi"
 fi
 
 if hash centerim5 2> /dev/null
 then
-  alias centerim5="screen -c ~/.centerim5/screenrc -S centerim5 centerim5"
+  alias centerim5="screen -d -xRR -c ~/.centerim5/screenrc -S centerim5 centerim5"
 fi
 
 function rails() {
