@@ -2,6 +2,9 @@ alias lsa="ls -lahi"
 alias l="ls -la"
 alias ll="ls -alFh"
 
+alias sslconnect="openssl s_client -connect"
+alias certinfo="openssl x509 -text -in"
+
 alias ..="cd .."
 alias ...="cd ../.."
 
