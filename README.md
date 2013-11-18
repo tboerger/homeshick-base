@@ -8,8 +8,8 @@ multiple repositories each with another focus.
 Install
 -------
 
-There are several pre-requisites needed before you install these package,
+There are several pre-requirements needed before you install these scripts,
 but you can execute the following command to get it done by the installer.
 This script works as an updater too.
 
-    wget -O - https://raw.github.com/tboerger/homesick-base/master/install | bash
+    wget -O - https://raw.github.com/tboerger/homeshick-base/master/install | bash
