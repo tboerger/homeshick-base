@@ -8,9 +8,6 @@
 [merge]
   log = true
 
-[push]
-  default = simple
-
 [diff]
   algorithm = patience
 
