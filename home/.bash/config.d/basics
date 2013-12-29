@@ -56,7 +56,7 @@ function rails() {
   then
     bundle exec rails $@
   else
-    rails $@
+    command rails $@
   fi
 }
 
@@ -65,7 +65,7 @@ function cap() {
   then
     bundle exec cap $@
   else
-    cap $@
+    command cap $@
   fi
 }
 
@@ -74,6 +74,15 @@ function rake() {
   then
     bundle exec rake $@
   else
-    rake $@
+    command rake $@
+  fi
+}
+
+function veewee() {
+  if [ -f Gemfile ]
+  then
+    bundle exec veewee $@
+  else
+    command veewee $@
   fi
 }
