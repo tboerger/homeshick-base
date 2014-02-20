@@ -92,9 +92,9 @@ source ~/.homesick/repos/homeshick/homeshick.sh
 
 if [ -d ~/.homesick/repos/${CASTLE_NAME} ]
 then
-  homesick pull -f ${CASTLE_NAME}
+  homeshick pull -f ${CASTLE_NAME}
 else
-  homeshick clone -f tboerger/${CASTLE_NAME}
+  homeshick clone -f https://github.com/tboerger/${CASTLE_NAME}
 fi
 
 homeshick link -f ${CASTLE_NAME}
