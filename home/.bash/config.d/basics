@@ -23,6 +23,7 @@ alias pull="git pull"
 
 alias pebbles="git checkout release/pebbles/master"
 alias roxy="git checkout release/roxy/master"
+alias stoney="git checkout release/stoney/master"
 
 alias be="bundle exec"
 
