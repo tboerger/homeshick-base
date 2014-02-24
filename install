@@ -40,16 +40,14 @@ then
   installed=$(zypper se -i bash-completion > /dev/null 2>&1)
   if [ $? -eq 1 ]
   then
-    sudo apt-get install bash bash-completion 
+    sudo zypper install bash bash-completion 
   fi
 
   installed=$(zypper se -i git > /dev/null 2>&1)
   if [ $? -eq 1 ]
   then
-    sudo apt-get install git
+    sudo zypper install git
   fi
-
-  sudo zypper install git bash bash-completion
 
   if ! hash git-flow 2> /dev/null
   then
