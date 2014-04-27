@@ -77,7 +77,7 @@ then
 
   if ! hash git-flow 2> /dev/null
   then
-    curl ${GITFLOW_URL} | sudo bash
+    brew install git-flow
   fi
 fi
 
