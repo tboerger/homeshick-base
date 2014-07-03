@@ -34,13 +34,12 @@ set sidescrolloff=5
 set scrolljump=1
 set completeopt=longest,menu,preview
 set diffopt+=vertical
+set background=dark
 
 setlocal spelllang=en
 
-if has("terminfo")
-  syntax on
-  colorscheme tronlegacy
-end
+syntax enable
+colorscheme solarized
 
 map <F5> zo
 map <F6> zc
@@ -49,7 +48,6 @@ map <F8> zM
 map <A-Right> gt
 map <A-Left> gT
 
-set t_md=
 set pastetoggle=<F11>
 set foldlevel=1000
 set fileencodings=utf-8,latin1,default
