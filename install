@@ -32,13 +32,13 @@ then
   fi
 
   installed=$(zypper se -i bash-completion > /dev/null 2>&1)
-  if [ $? -eq 1 ]
+  if [ $? -ne 0 ]
   then
     sudo zypper install bash bash-completion 
   fi
 
   installed=$(zypper se -i git > /dev/null 2>&1)
-  if [ $? -eq 1 ]
+  if [ $? -ne 0 ]
   then
     sudo zypper install git
   fi
