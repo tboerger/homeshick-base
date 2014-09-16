@@ -1,3 +1,10 @@
+[user]
+  name = "Thomas Boerger"
+  email = "thomas@webhippie.de"
+
+[github]
+  user = tboerger
+
 [color]
   ui = auto
   branch = auto
@@ -7,9 +14,6 @@
 
 [merge]
   log = true
-
-[push]
-  default = simple
 
 [diff]
   algorithm = patience
@@ -42,8 +46,8 @@
 
   recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
-  assume = update-index --assume-unchanged
-  unassume = update-index --no-assume-unchanged
+  assume = !git update-index --assume-unchanged
+  unassume = !git update-index --no-assume-unchanged
   assumed = !git ls-files -v | grep ^h | cut -c 3-
 
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"

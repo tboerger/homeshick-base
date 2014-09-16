@@ -62,7 +62,6 @@ map <F8> zM
 map <A-Right> gt
 map <A-Left> gT
 
-set t_md=
 set pastetoggle=<F11>
 set foldlevel=1000
 set fileencodings=utf-8,latin1,default

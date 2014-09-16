@@ -1,3 +1,5 @@
+export JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxPermSize=512m"
+
 export EDITOR="vim"
 
 export LC_ALL="en_US.UTF-8"
