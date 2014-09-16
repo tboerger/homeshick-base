@@ -1,6 +1,20 @@
 filetype plugin on
 filetype indent on
 
+let use_xhtml=1
+let html_use_css=1
+let html_ignore_folding=1
+let html_use_encoding="UTF-8"
+
+let g:solarized_termcolors=256
+let g:solarized_termtrans=0
+let g:solarized_degrade=0
+let g:solarized_bold=1
+let g:solarized_underline=1
+let g:solarized_italic=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+
 set modeline
 
 set shiftwidth=2
@@ -34,13 +48,12 @@ set sidescrolloff=5
 set scrolljump=1
 set completeopt=longest,menu,preview
 set diffopt+=vertical
+set background=dark
 
 setlocal spelllang=en
 
-if has("terminfo")
-  syntax on
-  colorscheme tronlegacy
-end
+syntax on
+colorscheme solarized
 
 map <F5> zo
 map <F6> zc
@@ -56,8 +69,3 @@ set fileencodings=utf-8,latin1,default
 set nobackup
 set swapfile
 set grepprg=grep\ -nH\ $*
-
-let use_xhtml=1
-let html_use_css=1
-let html_ignore_folding=1
-let html_use_encoding="UTF-8"

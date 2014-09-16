@@ -1,66 +1,82 @@
 #!/bin/bash
 
-GITFLOW_URL="https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh"
+CASTLE_NAME="homeshick-base"
 
-if [ -f /etc/ ]
+if [ -f /etc/debian_version ]
 then
-  if [ ! -x `which sudo` ]
+  if ! hash sudo 2> /dev/null
   then
     echo "Please install sudo!"
     exit 1
   fi
 
-  if [ ! -x `which homesick` ]
+  installed=$(sudo dpkg -l bash-completion > /dev/null 2>&1)
+  if [ $? -eq 1 ]
   then
-    echo "Please install homesick!"
-    exit 2
+    sudo apt-get install bash bash-completion 
   fi
 
-  echo "TODO: Install git and bash completion!"
-  exit 3
-
-  curl ${GITFLOW_URL} | sudo bash
+  installed=$(sudo dpkg -l git-core > /dev/null 2>&1)
+  if [ $? -eq 1 ]
+  then
+    sudo apt-get install git-core
+  fi
 fi
 
-if [ -f /etc/ ]
+if [ -f /etc/SuSE-release ]
 then
-  if [ ! -x `which sudo` ]
+  if ! hash sudo 2> /dev/null
   then
     echo "Please install sudo!"
     exit 1
   fi
 
-  echo "TODO: Install git and bash completion!"
-  exit 3
+  installed=$(zypper se -i bash-completion > /dev/null 2>&1)
+  if [ $? -eq 1 ]
+  then
+    sudo zypper install bash bash-completion 
+  fi
 
-  curl ${GITFLOW_URL} | sudo bash
+  installed=$(zypper se -i git > /dev/null 2>&1)
+  if [ $? -eq 1 ]
+  then
+    sudo zypper install git
+  fi
 fi
 
-if [ -f /etc/ ]
+if [ -f /usr/bin/sw_vers ]
 then
-  if [ ! -x `which brew` ]
+  if ! hash brew 2> /dev/null
   then
     echo "Please install homebrew!"
     exit 1
   fi
 
-  if [ "${EUID}" == "0" ]
+  installed=$(brew list bash-completion > /dev/null 2>&1)
+  if [ $? -eq 1 ]
   then
-    echo "Run as standard user!"
-    exit 2
+    brew install bash bash-completion 
   fi
 
-  brew install git bash bash-completion
-  curl ${GITFLOW_URL} | sudo bash
+  installed=$(brew list git > /dev/null 2>&1)
+  if [ $? -eq 1 ]
+  then
+    brew install git 
+  fi
 fi
 
 if [ ! -d ~/.homesick/repos/homeshick ]
 then
-  mkdir -p ~/.homesick/repos
   git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-
-  source ~/.homesick/repos/homeshick/homeshick.sh
 fi
 
-homeshick clone -bf tboerger/homeshick-base
-homeshick link -bf tboerger/homesick-base
+source ~/.homesick/repos/homeshick/homeshick.sh
+
+if [ -d ~/.homesick/repos/${CASTLE_NAME} ]
+then
+  homeshick pull -f ${CASTLE_NAME}
+else
+  homeshick clone -f https://github.com/tboerger/${CASTLE_NAME}
+fi
+
+homeshick link -f ${CASTLE_NAME}

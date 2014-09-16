@@ -21,9 +21,6 @@ alias commit="git commit"
 alias push="git push"
 alias pull="git pull"
 
-alias pebbles="git checkout release/pebbles/master"
-alias roxy="git checkout release/roxy/master"
-
 alias be="bundle exec"
 
 if hash hub 2> /dev/null
@@ -44,11 +41,6 @@ fi
 if hash irssi 2> /dev/null
 then
   alias irssi="screen -d -xRR -c ~/.irssi/screenrc -S irssi irssi"
-fi
-
-if hash centerim5 2> /dev/null
-then
-  alias centerim5="screen -d -xRR -c ~/.centerim5/screenrc -S centerim5 centerim5"
 fi
 
 function rails() {

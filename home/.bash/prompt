@@ -1,9 +1,4 @@
 function __git_parse_dirty {
-  if [ -f /etc/vagrant_box_build_time ]; then
-    printf "o"
-    return
-  fi
-
   status=$(git status --short 2> /dev/null)
 
   if [ $? -ne 0 ]
