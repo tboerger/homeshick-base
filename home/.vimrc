@@ -6,15 +6,6 @@ let html_use_css=1
 let html_ignore_folding=1
 let html_use_encoding="UTF-8"
 
-let g:solarized_termcolors=256
-let g:solarized_termtrans=0
-let g:solarized_degrade=0
-let g:solarized_bold=1
-let g:solarized_underline=1
-let g:solarized_italic=1
-let g:solarized_contrast="normal"
-let g:solarized_visibility="normal"
-
 set modeline
 
 set shiftwidth=2
@@ -53,7 +44,7 @@ set background=dark
 setlocal spelllang=en
 
 syntax on
-colorscheme solarized
+colorscheme molokai
 
 map <F5> zo
 map <F6> zc
