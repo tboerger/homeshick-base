@@ -59,3 +59,5 @@ set fileencodings=utf-8,latin1,default
 set nobackup
 set swapfile
 set grepprg=grep\ -nH\ $*
+
+set noerrorbells visualbell t_vb=
