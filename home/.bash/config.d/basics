@@ -43,6 +43,14 @@ then
   alias irssi="screen -d -xRR -c ~/.irssi/screenrc -S irssi irssi"
 fi
 
+function week() {
+  if [ $# -ne 1 ]; then
+    date +%W
+  else
+    date -d "${1}" +%W
+  fi
+}
+
 function rails() {
   if [ -f Gemfile ]
   then
