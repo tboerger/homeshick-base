@@ -34,5 +34,7 @@ silencewait 15
 bufferfile $HOME/.screenbuffer
 shell -$SHELL
 
+term xterm-256color
+
 sorendition b
 hardstatus alwayslastline "%{k}[ $USER@%H ][ %=%?%-Lw%? %{b}(%{k}%n*%f %t%?(%u)%?%{b})%{k} %?%+Lw%?%?%= ][ %l ]"
