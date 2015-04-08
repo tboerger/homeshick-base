@@ -6,12 +6,12 @@ bind \\
 bind ^h
 bind h
 
-bind 'w' windowlist -b
-bind 'W' windows
-bind 'K' kill
-bind 'I' login on
-bind 'O' login off
-bind '}' history
+bind "w" windowlist -b
+bind "W" windows
+bind "K" kill
+bind "I" login on
+bind "O" login off
+bind "}" history
 
 register [ "\033:se noai\015a"
 register ] "\033:se ai\015a"
@@ -28,13 +28,14 @@ defutf8 on
 autodetach on
 startup_message off
 crlf off
-multiuser off  
+multiuser off
 defscrollback 10000
 silencewait 15
 bufferfile $HOME/.screenbuffer
 shell -$SHELL
 
 term xterm-256color
+attrcolor b ".I"
 
 sorendition b
 hardstatus alwayslastline "%{k}[ $USER@%H ][ %=%?%-Lw%? %{b}(%{k}%n*%f %t%?(%u)%?%{b})%{k} %?%+Lw%?%?%= ][ %l ]"
