@@ -1,5 +1,0 @@
-__check_capfile() {
-  __cache_complete Capfile .cache_cap "cap -T | awk '/^cap / {print \$2}'"
-}
-
-complete -F __check_capfile -o default cap

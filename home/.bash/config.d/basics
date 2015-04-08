@@ -77,12 +77,3 @@ function rake() {
     command rake $@
   fi
 }
-
-function veewee() {
-  if [ -f Gemfile ]
-  then
-    bundle exec veewee $@
-  else
-    command veewee $@
-  fi
-}

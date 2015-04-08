@@ -1,5 +1,0 @@
-__check_rakefile() {
-  __cache_complete Rakefile .cache_rake "rake -T | awk '/^rake / {print \$2}'"
-}
-
-complete -F __check_rakefile -o default rake
