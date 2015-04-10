@@ -146,6 +146,7 @@ set pastetoggle=<F11>
 "}
 
 " incsearch plugin {
+hi search ctermfg=red ctermbg=yellow
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
