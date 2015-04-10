@@ -144,3 +144,9 @@ map <F10> gt
 " past switch {
 set pastetoggle=<F11>
 "}
+
+" incsearch plugin {
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+"}
