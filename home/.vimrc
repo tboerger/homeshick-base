@@ -104,10 +104,6 @@ set swapfile
 set grepprg=grep\ -nH\ $*
 "}
 
-" mouse related {
-set mouse=a
-"}
-
 " folding related {
 set foldcolumn=0
 set foldmethod=indent
