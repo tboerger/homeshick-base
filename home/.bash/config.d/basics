@@ -8,6 +8,8 @@ alias certinfo="openssl x509 -text -in"
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias grep="/usr/bin/grep --color=auto --exclude={.bzr,.cvs,.git,.hg,.svn}"
+
 alias rgrep="grep -Rn"
 alias history="fc -l 1"
 
