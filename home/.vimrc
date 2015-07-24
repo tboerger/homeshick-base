@@ -35,6 +35,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'scrooloose/nerdtree'
 Plugin 'nsf/gocode', {'rtp': 'vim/'}
 
 " color schemes
@@ -314,7 +315,10 @@ let g:tagbar_type_go = {
 \ }
 "}
 
+nmap <F8> :TagbarToggle<CR>
 
+
+map <C-n> :NERDTreeToggle<CR>
 
 
 " vim-easy-align {
