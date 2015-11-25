@@ -1,3 +1,6 @@
+[core]
+  quotepath = false
+
 [user]
   name = "Thomas Boerger"
   email = "thomas@webhippie.de"
