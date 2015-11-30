@@ -21,6 +21,9 @@
 [diff]
   algorithm = patience
 
+[pull]
+  rebase = true
+
 [alias]
   ci = commit
   di = diff
