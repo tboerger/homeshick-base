@@ -1,0 +1,13 @@
+dockercleanc() {
+  echo "> Deleting stopped containers"
+  echo
+
+  docker rm $(docker ps -a -q)
+}
+
+dockercleani() {
+  echo "> Deleting dangling images"
+  echo
+
+  docker rmi $(docker images -q -f dangling=true)
+}
