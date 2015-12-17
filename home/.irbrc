@@ -15,12 +15,15 @@ rescue LoadError => e
   require "irb/ext/save-history"
 
   IRB.conf[:SAVE_HISTORY] = 10000
-  IRB.conf[:HISTORY_FILE] = File.expand_path("~/.irb_history")
   IRB.conf[:PROMPT_MODE] = :SIMPLE
   IRB.conf[:INSPECT_MODE] = :pp
+
+  IRB.conf[:HISTORY_FILE] = File.expand_path(
+    "~/.irb_history"
+  )
 end
 
-def t
+def(t)
   x = Time.now
   yield
   Time.now - x

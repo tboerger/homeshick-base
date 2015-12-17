@@ -1,4 +1,4 @@
-alias grep="/usr/bin/grep --color=auto --exclude={.bzr,.cvs,.git,.hg,.svn}"
+alias grep="/usr/bin/grep --color=auto"
 unset GREP_OPTIONS
 
 alias lsa="ls -lahi"

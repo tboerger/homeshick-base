@@ -1,0 +1,6 @@
+.DS_Store
+.artifacts
+
+mkcloud.config
+mkcloud.pid
+mkcloud.steps.log

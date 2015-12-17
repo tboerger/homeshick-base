@@ -8,6 +8,9 @@
 [github]
   user = tboerger
 
+[core]
+  excludesfile = ~/.gitignore
+
 [color]
   ui = auto
   branch = auto
@@ -23,6 +26,9 @@
 
 [pull]
   rebase = true
+
+[push]
+  default = simple
 
 [alias]
   ci = commit
@@ -76,4 +82,4 @@
   insteadOf = "gist:"
 
 [include]
-  path = .gitconfig.local
+  path = ~/.gitconfig.local
