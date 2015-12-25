@@ -17,7 +17,7 @@ if defined? Hirb
   Hirb.enable
 end
 
-def(t)
+def t
   x = Time.now
   yield
   Time.now - x

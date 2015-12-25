@@ -23,7 +23,7 @@ rescue LoadError => e
   )
 end
 
-def(t)
+def t
   x = Time.now
   yield
   Time.now - x
