@@ -44,11 +44,9 @@ fi
 if hash irssi 2> /dev/null
 then
   function irssi() {
-    tmux attach -t irssi 2> /dev/null
-
-    if $? -ge 1
+    if ! tmux attach -t irssi 2> /dev/null
       tmux new -s irssi irssi
-    else
+    fi
   }
 fi
 
