@@ -26,6 +26,11 @@ alias pull="git pull"
 
 alias be="bundle exec"
 
+if hash vim 2> /dev/null
+then
+  alias vi="vim"
+fi
+
 if hash hub 2> /dev/null
 then
   alias git="hub"
