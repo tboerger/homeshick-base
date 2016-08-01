@@ -20,15 +20,6 @@ function __git_parse_branch {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ <\1>/"
 }
 
-function __ruby_parse_version {
-  if hash ruby 2> /dev/null
-  then
-    printf " <$(ruby -e 'puts "#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}"')>"
-  else
-    printf ""
-  fi  
-}
-
 bash_prompt() {
   local NONE="\[\033[0m\]"
 
@@ -39,9 +30,9 @@ bash_prompt() {
   local D="\[\033[01;34m\]"
 
   if [[ "${EUID}" == "0" ]] ; then
-    export PS1="\n$R\u$S@$H\h: $D\w\$(__ruby_parse_version)\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
+    export PS1="\n$R\u$S@$H\h: $D\w\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
   else
-    export PS1="\n$U\u$S@$H\h: $D\w\$(__ruby_parse_version)\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
+    export PS1="\n$U\u$S@$H\h: $D\w\n<\$(__git_parse_dirty)$D>\$(__git_parse_branch) # $NONE"
   fi
 }
 
