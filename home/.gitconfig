@@ -1,9 +1,10 @@
 [core]
-  quotepath = false
+	quotepath = false
 
 [user]
   name = "Thomas Boerger"
   email = "thomas@webhippie.de"
+  signingkey = 0xF630596501026DB5
 
 [github]
   user = tboerger
@@ -30,6 +31,12 @@
 [push]
   default = simple
 
+[commit]
+  template = ~/.gitfiles/commit-template
+
+[format]
+  signoff = true
+
 [alias]
   ci = commit
   di = diff
@@ -44,6 +51,9 @@
   unstage = reset HEAD
   uncommit = reset --soft HEAD^
 
+  tag = tag -s
+
+  tags = tag -l
   branches = branch -a
   remotes = remote -v
 
@@ -85,6 +95,9 @@
   required = true
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
+
+[ghi]
+  token = !security find-internet-password -a tboerger -s github.com -l 'ghi token' -w
 
 [include]
   path = ~/.gitconfig.local
