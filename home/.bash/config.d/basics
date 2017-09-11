@@ -53,3 +53,10 @@ then
     fi
   }
 fi
+
+function univention-appcenter-control() {
+  local action=$1
+  shift
+
+  command univention-appcenter-control $action --username owncloud --pwdfile ~/.univentionpwd $@
+}
