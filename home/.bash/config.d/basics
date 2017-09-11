@@ -24,8 +24,6 @@ alias commit="git commit"
 alias push="git push"
 alias pull="git pull"
 
-alias be="bundle exec"
-
 if hash vim 2> /dev/null
 then
   alias vi="vim"
@@ -55,38 +53,3 @@ then
     fi
   }
 fi
-
-function week() {
-  if [ $# -ne 1 ]; then
-    date +%W
-  else
-    date -d "${1}" +%W
-  fi
-}
-
-function rails() {
-  if [ -f Gemfile ]
-  then
-    bundle exec rails $@
-  else
-    command rails $@
-  fi
-}
-
-function cap() {
-  if [ -f Gemfile ]
-  then
-    bundle exec cap $@
-  else
-    command cap $@
-  fi
-}
-
-function rake() {
-  if [ -f Gemfile ]
-  then
-    bundle exec rake $@
-  else
-    command rake $@
-  fi
-}

@@ -39,3 +39,7 @@ dockerclean() {
   dockercleani
   dockercleanv
 }
+
+docker-go() {
+  docker run -ti --rm -v $(pwd):$(pwd) -w $(pwd) -e GOPATH webhippie/golang:latest bash
+}
