@@ -51,7 +51,7 @@
   unstage = reset HEAD
   uncommit = reset --soft HEAD^
 
-  tag = tag -s
+  stag = tag -s
 
   tags = tag -l
   branches = branch -a
