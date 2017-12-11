@@ -1,43 +1,32 @@
 dockercleanc() {
-  local clean=$(docker ps -a -q)
-
-  if [[ "${clean}" != "" ]]
-  then
-    echo "==> Deleting stopped containers"
-    echo
-
-    docker rm ${clean}
-  fi
+  echo "==> Prune stopped containers"
+  docker container prune -f
+  echo "==> Done!"
 }
 
 dockercleani() {
-  local clean=$(docker images -q -f dangling=true)
-
-  if [[ "${clean}" != "" ]]
-  then
-    echo "==> Deleting dangling images"
-    echo
-
-    docker rmi ${clean}
-  fi
+  echo "==> Prune dangling images"
+  docker image prune -f
+  echo "==> Done!"
 }
 
 dockercleanv() {
-  local clean=$(docker volume ls -q -f dangling=true)
+  echo "==> Prune dangling volumes"
+  docker volume prune -f
+  echo "==> Done!"
+}
 
-  if [[ "${clean}" != "" ]]
-  then
-    echo "==> Deleting dangling volumes"
-    echo
-
-    docker volume rm ${clean}
-  fi
+dockercleann() {
+  echo "==> Prune unused networks"
+  docker network prune -f
+  echo "==> Done!"
 }
 
 dockerclean() {
   dockercleanc
   dockercleani
   dockercleanv
+  dockercleann
 }
 
 docker-go() {
