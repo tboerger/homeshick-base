@@ -57,6 +57,8 @@
   branches = branch -a
   remotes = remote -v
 
+  fap = fetch --all --prune
+
   m = checkout master
   d = checkout develop
 
