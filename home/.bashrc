@@ -25,5 +25,3 @@ if [ -d ${HOME}/.homesick/repos/homeshick ]
 then
   source ${HOME}/.homesick/repos/homeshick/homeshick.sh
 fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

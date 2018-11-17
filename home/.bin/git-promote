@@ -22,6 +22,16 @@ fi
 
 if [ -z "${remote}" ]
 then
+  remote="$(git remote -v | grep -E '(git@|https://)gitea' | head -1 | awk '{print $1}')"
+fi
+
+if [ -z "${remote}" ]
+then
+  remote="$(git remote -v | grep -E '(git@|https://)gitlab' | head -1 | awk '{print $1}')"
+fi
+
+if [ -z "${remote}" ]
+then
   echo "no remote with write access" >&2
   exit 1
 fi
