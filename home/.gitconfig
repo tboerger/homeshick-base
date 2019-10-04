@@ -1,9 +1,9 @@
 [core]
-	quotepath = false
+  quotepath = false
 
 [user]
-  name = "Thomas Boerger"
-  email = "thomas@webhippie.de"
+  name = Thomas Boerger
+  email = thomas@webhippie.de
   signingkey = 0xF630596501026DB5
 
 [github]
@@ -100,6 +100,9 @@
 
 [ghi]
   token = !security find-internet-password -a tboerger -s github.com -l 'ghi token' -w
+
+[ghq]
+  root = ~/Developer
 
 [include]
   path = ~/.gitconfig.local
