@@ -15,3 +15,8 @@ function ncget {
 
   nc -l -p 1337 | tar -C $@ -xv;
 }
+
+function random-password {
+  local LENGTH=${1:-24}
+  openssl rand -base64 $((2*${LENGTH})) | tr -cd '[:alnum:]' | head -c ${LENGTH}
+}
