@@ -1,108 +1,91 @@
 [core]
-  quotepath = false
-
-[user]
-  name = Thomas Boerger
-  email = thomas@webhippie.de
-  signingkey = 0xF630596501026DB5
-
-[github]
-  user = tboerger
+	quotepath = false
 
 [core]
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
 
 [color]
-  ui = auto
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
 
 [merge]
-  log = true
+	log = true
 
 [diff]
-  algorithm = patience
+	algorithm = patience
 
 [pull]
-  rebase = true
+	rebase = true
 
 [push]
-  default = simple
-
-[commit]
-  template = ~/.gitfiles/commit-template
+	default = simple
 
 [format]
-  signoff = true
+	signoff = true
 
 [alias]
-  ci = commit
-  di = diff
-  st = status
-  co = checkout
-  br = branch
-  pu = push
-  pl = pull
-  cat = cat-file -p
-  rc = rebase --continue
-  rs = rebase --skip
-  unstage = reset HEAD
-  uncommit = reset --soft HEAD^
+	ci = commit
+	di = diff
+	st = status
+	co = checkout
+	br = branch
+	pu = push
+	pl = pull
+	cat = cat-file -p
+	rc = rebase --continue
+	rs = rebase --skip
+	unstage = reset HEAD
+	uncommit = reset --soft HEAD^
 
-  stag = tag -s
+	stag = tag -s
 
-  tags = tag -l
-  branches = branch -a
-  remotes = remote -v
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
 
-  fap = fetch --all --prune
+	fap = fetch --all --prune
 
-  m = checkout master
-  d = checkout develop
+	m = checkout master
+	d = checkout develop
 
-  sma = submodule add
-  smi = submodule init
-  smu = submodule update --init --recursive
+	sma = submodule add
+	smi = submodule init
+	smu = submodule update --init --recursive
 
-  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 
-  recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+	recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
-  assume = !git update-index --assume-unchanged
-  unassume = !git update-index --no-assume-unchanged
-  assumed = !git ls-files -v | grep ^h | cut -c 3-
+	assume = !git update-index --assume-unchanged
+	unassume = !git update-index --no-assume-unchanged
+	assumed = !git ls-files -v | grep ^h | cut -c 3-
 
-  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
-  snapshots = !git stash list --grep snapshot
+	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
+	snapshots = !git stash list --grep snapshot
 
 [url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
 
 [url "git://github.com/"]
-  insteadOf = "github:"
+	insteadOf = "github:"
 
 [url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
 
 [url "git://gist.github.com/"]
-  insteadOf = "gist:"
+	insteadOf = "gist:"
 
 [filter "lfs"]
-  required = true
-  clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
-
-[ghi]
-  token = !security find-internet-password -a tboerger -s github.com -l 'ghi token' -w
-
-[ghq]
-  root = ~/Developer
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
 
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local

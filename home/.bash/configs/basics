@@ -1,7 +1,4 @@
-export JAVA_OPTS="-Xms512m -Xmx1024m -XX:MaxPermSize=512m"
-
 export EDITOR="vim"
-
 export PAGER="less"
 export CLICOLOR="1"
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
@@ -10,10 +7,3 @@ export IGNOREEOF="1"
 export HISTSIZE="100000"
 export HISTFILESIZE="100000"
 export HISTCONTROL="ignoreboth"
-
-set -C noclobber
-
-shopt -s cmdhist
-shopt -s checkwinsize
-shopt -s histappend
-shopt -s cdspell

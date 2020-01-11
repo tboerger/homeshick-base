@@ -1,0 +1,30 @@
+dockercleanc() {
+	echo "==> Prune stopped containers"
+	docker container prune -f
+	echo "==> Done!"
+}
+
+dockercleani() {
+	echo "==> Prune dangling images"
+	docker image prune -f
+	echo "==> Done!"
+}
+
+dockercleanv() {
+	echo "==> Prune dangling volumes"
+	docker volume prune -f
+	echo "==> Done!"
+}
+
+dockercleann() {
+	echo "==> Prune unused networks"
+	docker network prune -f
+	echo "==> Done!"
+}
+
+dockerclean() {
+	dockercleanc
+	dockercleani
+	dockercleanv
+	dockercleann
+}

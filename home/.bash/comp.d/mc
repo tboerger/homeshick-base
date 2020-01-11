@@ -1,4 +1,0 @@
-if hash mc 2> /dev/null
-then
-  complete -C $(which mc) mc
-fi

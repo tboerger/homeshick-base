@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Usage: changelog [<range>] [-- <directory> ...]
 #
 # Displays git log in a format suitable for change log. If no range given,

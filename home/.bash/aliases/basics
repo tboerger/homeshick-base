@@ -1,0 +1,11 @@
+alias grep="command grep --color=auto"
+
+alias lsa="ls -lahi"
+alias l="ls -la"
+alias ll="ls -alFh"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias rgrep="grep -Rn"
+alias history="fc -l 1"

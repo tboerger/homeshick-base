@@ -9,10 +9,9 @@ set -e
 
 [[ -z $1 ]] && abort=1 || abort=0
 
-if [[ $abort -gt 0 || $1 = "-h" || $1 = "--help" ]]
-then
-  sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0" >&$((abort+1))
-  exit $abort
+if [[ $abort -gt 0 || $1 = "-h" || $1 = "--help" ]]; then
+	sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0" >&$((abort+1))
+	exit $abort
 fi
 
 git describe --tags "${1}"

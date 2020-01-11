@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Usage: git recently-checkout-branches
 #
 # Shows timestamp and name of recently checked-out branches in reverse
@@ -14,16 +14,15 @@ set -e
 seen=":"
 git_dir="$(git rev-parse --git-dir)"
 
-git reflog -n100 --pretty='%cr|%gs' --grep-reflog='checkout: moving' HEAD | \
-  while read line; do
-    date="${line%%|*}"
-    branch="${line##* }"
+git reflog -n100 --pretty='%cr|%gs' --grep-reflog='checkout: moving' HEAD | while read line; do
+	date="${line%%|*}"
+	branch="${line##* }"
 
-    if ! [[ ${seen} == *:"${branch}":* ]]; then
-      seen="${seen}${branch}:"
+	if ! [[ ${seen} == *:"${branch}":* ]]; then
+		seen="${seen}${branch}:"
 
-      if [ -f "${git_dir}/refs/heads/${branch}" ]; then
-        printf "%s\t%s\n" "${date}" "${branch}"
-      fi
-    fi
-  done
+		if [ -f "${git_dir}/refs/heads/${branch}" ]; then
+			printf "%s\t%s\n" "${date}" "${branch}"
+		fi
+	fi
+done
