@@ -1,7 +1,31 @@
-PROMPT="%{$fg_bold[cyan]%}%T%{$fg_bold[green]%} %{$fg_bold[white]%}%n%{$fg[magenta]%}@%{$fg_bold[white]%}%m %{$fg_bold[green]%}%d
-%{$fg_bold[yellow]%}%% %{$reset_color%}"
+if [[ ${USER} == "root" ]]; then
+	CARETCOLOR="red"
+else
+	CARETCOLOR="white"
+fi
 
-ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+local _current_dir="%{$fg_bold[blue]%}%3~%{$reset_color%} "
+local _return_status="%{$fg_bold[red]%}%(?..⍉)%{$reset_color%}"
+
+function _user_host() {
+	echo "%{$fg[cyan]%}%n@%m%{$reset_color%}:"
+}
+
+ZSH_THEME_GIT_PROMPT_PREFIX="["
+ZSH_THEME_GIT_PROMPT_SUFFIX="]"
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
+
+PROMPT='
+$(_user_host)${_current_dir}
+%{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
+
+PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
+RPROMPT='%{$(echotc UP 1)%}$(git_super_status)${_return_status}%{$(echotc DO 1)%}'

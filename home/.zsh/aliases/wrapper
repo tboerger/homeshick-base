@@ -1,0 +1,15 @@
+if (( $+commands[vim] )); then
+	alias vi="vim"
+fi
+
+if (( $+commands[hub] )); then
+	alias git="hub"
+fi
+
+if (( $+commands[htop] )); then
+	alias top="htop"
+fi
+
+if (( $+commands[colordiff] )); then
+	alias diff="colordiff -u"
+fi

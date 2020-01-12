@@ -10,22 +10,22 @@ for FILE in ${HOME}/.zsh/aliases/*; do
 	source ${FILE}
 done
 
-for FILE in ${HOME}/.zsh/completions/*; do
-	source ${FILE}
-done
-
 for FILE in ${HOME}/.zsh/functions/*; do
 	source ${FILE}
 done
 
 export ZSH=${HOME}/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
-ZSH_CUSTOM=${HOME}/.zsh/custom
+export ZSH_THEME="tboerger"
+export ZSH_CUSTOM=${HOME}/.zsh/custom
 
 plugins=(
-	git
 	fzf
+	history-substring-search
+	docker
+	encode64
+	fd
+	git-prompt
 )
 
 # linux
@@ -34,10 +34,18 @@ plugins+=(
 )
 
 # macos
-plugins=(
+plugins+=(
 	direnv
 	gpg-agent
 	gopass
+	autojump
+	cloudapp
+	colorize
+	copydir
+	copyfile
+	fzf
+	httpie
+	iterm2
 )
 
 if [ -f ${ZSH}/oh-my-zsh.sh ]; then

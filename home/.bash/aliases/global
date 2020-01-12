@@ -8,4 +8,8 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 alias rgrep="grep -Rn"
+alias hgrep="fc -El 0 | grep"
 alias history="fc -l 1"
+
+alias duf="du -sh"
+alias t="tail -f"
