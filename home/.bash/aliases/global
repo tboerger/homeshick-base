@@ -13,3 +13,5 @@ alias history="fc -l 1"
 
 alias duf="du -sh"
 alias t="tail -f"
+
+alias external-ip="curl -s -S https://icanhazip.com"
