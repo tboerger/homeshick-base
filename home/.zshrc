@@ -22,17 +22,23 @@ if [ -f ${HOME}/.zsh/system ]; then
 	source ${HOME}/.zsh/system
 fi
 
-for FILE in ${HOME}/.zsh/configs/*; do
-	source ${FILE}
-done
+if [ -d ${HOME}/.zsh/configs ]; then
+	for FILE in ${HOME}/.zsh/configs/*; do
+		source ${FILE}
+	done
+fi
 
-for FILE in ${HOME}/.zsh/aliases/*; do
-	source ${FILE}
-done
+if [ -d ${HOME}/.zsh/aliases ]; then
+	for FILE in ${HOME}/.zsh/aliases/*; do
+		source ${FILE}
+	done
+fi
 
-for FILE in ${HOME}/.zsh/functions/*; do
-	source ${FILE}
-done
+if [ -d ${HOME}/.zsh/functions ]; then
+	for FILE in ${HOME}/.zsh/functions/*; do
+		source ${FILE}
+	done
+fi
 
 if [ -f ${ZSH}/oh-my-zsh.sh ]; then
 	source ${ZSH}/oh-my-zsh.sh
