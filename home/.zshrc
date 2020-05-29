@@ -4,7 +4,6 @@ export ZSH_THEME="tboerger"
 export ZSH_CUSTOM=${HOME}/.zsh/custom
 
 plugins=(
-	fzf
 	history-substring-search
 	docker
 	encode64
