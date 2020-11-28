@@ -5,16 +5,13 @@ export ZSH_CUSTOM=${HOME}/.zsh/custom
 
 plugins=(
 	history-substring-search
-	docker
 	encode64
-	fd
 	git-prompt
-	nmap
-	perms
 	rsync
 	screen
 	transfer
 	tmux
+	kube-ps1
 )
 
 if [ -f ${HOME}/.zsh/system ]; then

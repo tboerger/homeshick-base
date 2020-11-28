@@ -28,4 +28,4 @@ $(_user_host)${_current_dir}
 %{$fg[$CARETCOLOR]%}▶%{$resetcolor%} '
 
 PROMPT2='%{$fg[$CARETCOLOR]%}◀%{$reset_color%} '
-RPROMPT='%{$(echotc UP 1)%}$(git_super_status)${_return_status}%{$(echotc DO 1)%}'
+RPROMPT='%{$(echotc UP 1)%}$(kube_ps1) $(git_super_status)${_return_status}%{$(echotc DO 1)%}'
