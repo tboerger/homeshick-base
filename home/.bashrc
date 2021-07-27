@@ -1,3 +1,19 @@
+if hash dircolors 2> /dev/null; then
+	if [[ -f ${HOME}/.dir_colors ]]; then
+		eval $(dircolors -b ~/.dir_colors)
+	elif [[ -f /etc/DIR_COLORS ]]; then
+		eval $(dircolors -b /etc/DIR_COLORS)
+	fi
+else
+	if hash gdircolors 2> /dev/null; then
+		if [[ -f ${HOME}/.dir_colors ]]; then
+			eval $(gdircolors -b ~/.dir_colors)
+		elif [[ -f /etc/DIR_COLORS ]]; then
+			eval $(gdircolors -b /etc/DIR_COLORS)
+		fi
+	fi
+fi
+
 if [ -f ${HOME}/.bash/system ]; then
 	source ${HOME}/.bash/system
 fi

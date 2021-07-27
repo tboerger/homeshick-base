@@ -1,3 +1,19 @@
+if (( $+commands[dircolors] )); then
+	if [[ -f ${HOME}/.dir_colors ]]; then
+		eval $(dircolors -b ~/.dir_colors)
+	elif [[ -f /etc/DIR_COLORS ]]; then
+		eval $(dircolors -b /etc/DIR_COLORS)
+	fi
+else
+	if (( $+commands[gdircolors] )); then
+		if [[ -f ${HOME}/.dir_colors ]]; then
+			eval $(gdircolors -b ~/.dir_colors)
+		elif [[ -f /etc/DIR_COLORS ]]; then
+			eval $(gdircolors -b /etc/DIR_COLORS)
+		fi
+	fi
+fi
+
 export ZSH=${HOME}/.oh-my-zsh
 
 export ZSH_THEME="tboerger"
