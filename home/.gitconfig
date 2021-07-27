@@ -17,6 +17,9 @@
 [diff]
 	algorithm = patience
 
+[pager]
+	branch = false
+
 [pull]
 	rebase = true
 
