@@ -1,0 +1,30 @@
+alias k='kubectl'
+alias kaf='kubectl apply -f'
+
+alias kgns='kubectl get namespaces'
+
+alias kgs='kubectl get svc'
+alias kgsa='kubectl get svc --all-namespaces'
+
+alias kgi='kubectl get ingress'
+alias kgia='kubectl get ingress --all-namespaces'
+
+alias kgcm='kubectl get configmaps'
+alias kgcma='kubectl get configmaps --all-namespaces'
+
+alias kgsec='kubectl get secret'
+alias kgseca='kubectl get secret --all-namespaces'
+
+alias kgd='kubectl get deployment'
+alias kgda='kubectl get deployment --all-namespaces'
+
+alias kgss='kubectl get statefulset'
+alias kgssa='kubectl get statefulset --all-namespaces'
+
+alias kgpvc='kubectl get pvc'
+alias kgpvca='kubectl get pvc --all-namespaces'
+
+alias kgds='kubectl get daemonset'
+alias kgdsw='kgds --watch'
+
+alias kgall='kubectl get all --all-namespaces'
