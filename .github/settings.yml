@@ -1,7 +1,7 @@
 ---
 repository:
   name: homeshick-base
-  description: Dotfile management for base
+  description: "Dotfiles: Base"
   topics: dotfiles, homeshick
 
   private: false
