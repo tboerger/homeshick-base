@@ -1,7 +1,5 @@
 [core]
 	quotepath = false
-
-[core]
 	excludesfile = ~/.gitignore
 
 [color]
@@ -19,6 +17,7 @@
 
 [pager]
 	branch = false
+	tag = false
 
 [pull]
 	rebase = true
@@ -28,6 +27,9 @@
 
 [format]
 	signoff = true
+
+[init]
+	defaultBranch = master
 
 [alias]
 	ci = commit
@@ -62,12 +64,22 @@
 
 	recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
+	amend = commit --amend -C HEAD
+
 	assume = !git update-index --assume-unchanged
 	unassume = !git update-index --no-assume-unchanged
 	assumed = !git ls-files -v | grep ^h | cut -c 3-
 
 	snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 	snapshots = !git stash list --grep snapshot
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	process = git-lfs filter-process
+	required = true
+	smudge = git-lfs smudge -- %f
+
+
 
 [url "git@github.com:"]
 	insteadOf = "gh:"
@@ -89,6 +101,9 @@
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+
+[include]
+	path = ~/.gitconfig.profile
 
 [include]
 	path = ~/.gitconfig.local

@@ -1,10 +1,4 @@
 #!/usr/bin/env sh
-# Usage: git promote [<remote>[/<branch>]]
-#
-# Publishes the current branch on a remote and sets up upstream tracking.
-
-# Taken from https://github.com/mislav/dotfiles/blob/master/bin/git-promote
-
 set -e
 
 [ "$1" = "-h" ] && exec sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
@@ -16,15 +10,7 @@ remote_branch="${1#*/}"
 [ "$remote_branch" != "${remote}" ] || remote_branch="$branch"
 
 if [ -z "${remote}" ]; then
-	remote="$(git remote -v | grep -E '(git@|https://)github' | head -1 | awk '{print $1}')"
-fi
-
-if [ -z "${remote}" ]; then
-	remote="$(git remote -v | grep -E '(git@|https://)gitea' | head -1 | awk '{print $1}')"
-fi
-
-if [ -z "${remote}" ]; then
-	remote="$(git remote -v | grep -E '(git@|https://)(gitlab|scm)' | head -1 | awk '{print $1}')"
+	remote="$(git remote -v | grep -E '(git@|https://)(git|scm)' | head -1 | awk '{print $1}')"
 fi
 
 if [ -z "${remote}" ]; then

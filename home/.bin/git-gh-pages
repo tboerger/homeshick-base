@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-# Usage: git gh-pages org/repo
-#
-# Creates a dummy gh-pages branch for GitHub repos.
-
 set -e
 
 [ "$1" = "-h" ] && exec sed -ne '/^#/!q;s/.\{1,2\}//;1d;p' < "$0"
 
-workdir="$(mktemp -d -t gh-pages)"
+workdir="$(mktemp -d -t gh-pages.XXXXXXXXXX)"
 repo="${1}"
 
 if [[ -z "${repo}" ]]; then
@@ -22,7 +18,7 @@ pushd ${workdir} >/dev/null
 	touch index.html
 	git add index.html
 
-	git commit -m 'Initial commit'
+	git commit -m 'chore: initial commit'
 
 	git remote add origin https://github.com/${repo}.git
 	git push -u origin gh-pages

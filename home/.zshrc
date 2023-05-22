@@ -28,6 +28,7 @@ plugins=(
 	transfer
 	tmux
 	kube-ps1
+	tfenv
 )
 
 if [ -f ${HOME}/.zsh/system ]; then
