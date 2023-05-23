@@ -61,6 +61,10 @@ if [ -f ${HOME}/.zshrc.local ]; then
 	source ${HOME}/.zshrc.local
 fi
 
+if (( $+commands[starship] )); then
+	source <(/usr/bin/starship init zsh --print-full-init)
+fi
+
 if [ -d ${HOME}/.homesick/repos/homeshick ]; then
 	source ${HOME}/.homesick/repos/homeshick/homeshick.sh
 fi
