@@ -5,18 +5,18 @@ CASTLE_NAME="homeshick-base"
 if [ -f /etc/os-release ]; then
     source /etc/os-release
 
-    if [ "${ID_LIKE}" == "deian" ]; then
+    if [ "${ID_LIKE}" == "debian" ]; then
         if ! hash sudo 2> /dev/null; then
           echo "Please install sudo!"
           exit 1
         fi
 
-        installed=$(sudo dpkg -l bash-completion > /dev/null 2>&1)
+        sudo dpkg -l bash-completion > /dev/null 2>&1
         if [ $? -eq 1 ]; then
             sudo apt-get install bash
         fi
 
-        installed=$(sudo dpkg -l git-core > /dev/null 2>&1)
+        sudo dpkg -l git-core > /dev/null 2>&1
         if [ $? -eq 1 ]; then
             sudo apt-get install git
         fi
@@ -28,25 +28,25 @@ else
             exit 1
         fi
 
-        installed=$(brew list bash > /dev/null 2>&1)
+        brew list bash > /dev/null 2>&1
         if [ $? -eq 1 ]; then
             brew install bash
         fi
 
-        installed=$(brew list git > /dev/null 2>&1)
+        brew list git > /dev/null 2>&1
         if [ $? -eq 1 ]; then
             brew install git
         fi
     fi
 fi
 
-if [ ! -d "~/.homesick/repos/homeshick" ]; then
+if [ ! -d "${HOME}/.homesick/repos/homeshick" ]; then
     git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 fi
 
-source ~/.homesick/repos/homeshick/homeshick.sh
+source ${HOME}/.homesick/repos/homeshick/homeshick.sh
 
-if [ -d "~/.homesick/repos/${CASTLE_NAME}" ]; then
+if [ -d "${HOME}/.homesick/repos/${CASTLE_NAME}" ]; then
     homeshick pull -f "${CASTLE_NAME}"
 else
     homeshick clone -f "https://github.com/tboerger/${CASTLE_NAME}"
