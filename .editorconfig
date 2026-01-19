@@ -11,25 +11,13 @@ trim_trailing_whitespace = true
 indent_style = tab
 indent_size = 4
 
-[*.yml]
-indent_style = space
-indent_size = 2
-
-[*.yaml]
-indent_style = space
-indent_size = 2
-
-[*.tf]
-indent_style = space
-indent_size = 2
-
-[*.tmpl]
-indent_style = space
-indent_size = 2
-
 [*.sh]
 indent_style = space
 indent_size = 4
 
 [*.md]
 trim_trailing_whitespace = true
+
+[*.{yml,yaml,toml,json,tmpl,tf}]
+indent_style = space
+indent_size = 2
