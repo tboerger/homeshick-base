@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/tboerger/homeshick-base/compare/v1.0.0...v1.1.0) (2026-01-26)
+
+### Features
+
+* add more files to editorconfig ([9640121](https://github.com/tboerger/homeshick-base/commit/96401214763fea1ab1b54ad2b19d8cf1efc980bf))
+* do not pin github actions anymore ([671383a](https://github.com/tboerger/homeshick-base/commit/671383a9cc1c18fe5cb8022c12afbab8ead6e7cd))
+
 ## 1.0.0 (2024-11-24)
 
 
