@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.2.0](https://github.com/tboerger/homeshick-base/compare/v1.1.0...v1.2.0) (2026-03-02)
+
+### Features
+
+* enable automerge for lockfile maintenance prs ([73270a5](https://github.com/tboerger/homeshick-base/commit/73270a5513e481dcef8a245a85f092c9e2cd6a29))
+
 ## [1.1.0](https://github.com/tboerger/homeshick-base/compare/v1.0.0...v1.1.0) (2026-01-26)
 
 ### Features
