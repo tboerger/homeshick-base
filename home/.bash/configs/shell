@@ -1,0 +1,6 @@
+set -C noclobber
+
+shopt -s cmdhist
+shopt -s checkwinsize
+shopt -s histappend
+shopt -s cdspell
