@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/tboerger/homeshick-base/compare/v1.2.0...v1.3.0) (2026-03-16)
+
+### Features
+
+* add bash configs again ([174f9e8](https://github.com/tboerger/homeshick-base/commit/174f9e846c6de80af422dc47bb61f6c8f7f36fd5))
+
 ## [1.2.0](https://github.com/tboerger/homeshick-base/compare/v1.1.0...v1.2.0) (2026-03-02)
 
 ### Features
