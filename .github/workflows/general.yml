@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   general:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Clone source
