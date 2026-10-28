@@ -2,5 +2,5 @@
 
 [tools]
 betterleaks = "1.9.0"
-node = "24"
+node = "26"
 prek = "0.5.7"
