@@ -65,6 +65,10 @@ if (( $+commands[starship] )); then
 	source <(/usr/bin/starship init zsh --print-full-init)
 fi
 
+if (( $+commands[mise] )); then
+	eval "$(mise activate zsh)"
+fi
+
 if [ -d ${HOME}/.homesick/repos/homeshick ]; then
 	source ${HOME}/.homesick/repos/homeshick/homeshick.sh
 fi
