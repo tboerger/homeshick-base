@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.4.0](https://github.com/tboerger/homeshick-base/compare/v1.3.0...v1.4.0) (2026-11-09)
+
+### Features
+
+* integrate mise activation ([c7e369b](https://github.com/tboerger/homeshick-base/commit/c7e369b3349dcdc4602aaab7a6f96f533ef69b03))
+
+### Dependencies
+
+* **mise:** update dependency betterleaks to v1.10.0 ([#26](https://github.com/tboerger/homeshick-base/issues/26)) ([2856f5a](https://github.com/tboerger/homeshick-base/commit/2856f5a60c27d779d9a535c314d14244c44912ac))
+* **mise:** update dependency betterleaks to v1.9.0 ([#19](https://github.com/tboerger/homeshick-base/issues/19)) ([68227b8](https://github.com/tboerger/homeshick-base/commit/68227b864a0bfe95499955440958628e81c15db4))
+* **mise:** update dependency prek to v0.5.10 ([#25](https://github.com/tboerger/homeshick-base/issues/25)) ([63ab1e4](https://github.com/tboerger/homeshick-base/commit/63ab1e46561e02639fae80d96b82ae3872cbdd6b))
+* **mise:** update dependency prek to v0.5.3 ([#17](https://github.com/tboerger/homeshick-base/issues/17)) ([96c304a](https://github.com/tboerger/homeshick-base/commit/96c304a194d7dab25a818b7011dfa21d498077ec))
+* **mise:** update dependency prek to v0.5.4 ([#18](https://github.com/tboerger/homeshick-base/issues/18)) ([eb36d6f](https://github.com/tboerger/homeshick-base/commit/eb36d6f2c9f8c557fbc72a3e8e0e9ad59d327013))
+* **mise:** update dependency prek to v0.5.5 ([#20](https://github.com/tboerger/homeshick-base/issues/20)) ([462017b](https://github.com/tboerger/homeshick-base/commit/462017b975dfe03a1a289bfedec1203d197ad2db))
+* **mise:** update dependency prek to v0.5.6 ([#21](https://github.com/tboerger/homeshick-base/issues/21)) ([07258f6](https://github.com/tboerger/homeshick-base/commit/07258f66d496df6b88456416a717736351e164f2))
+* **mise:** update dependency prek to v0.5.7 ([#22](https://github.com/tboerger/homeshick-base/issues/22)) ([1cad8e2](https://github.com/tboerger/homeshick-base/commit/1cad8e27b6ae98949bb74826e2a89a086df8ad8b))
+* **mise:** update dependency prek to v0.5.9 ([#24](https://github.com/tboerger/homeshick-base/issues/24)) ([ed7e321](https://github.com/tboerger/homeshick-base/commit/ed7e3214292c88990b712cbc97a0dfa0c15e1708))
+* **mise:** update node.js to v26 ([#23](https://github.com/tboerger/homeshick-base/issues/23)) ([5baf392](https://github.com/tboerger/homeshick-base/commit/5baf392819b08b7e2cf6e601f893aecdddd6e08e))
+
 ## [1.3.0](https://github.com/tboerger/homeshick-base/compare/v1.2.0...v1.3.0) (2026-03-16)
 
 ### Features
