@@ -1,6 +1,6 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 
 [tools]
-betterleaks = "1.10.0"
+betterleaks = "1.10.1"
 node = "26"
 prek = "0.5.10"
